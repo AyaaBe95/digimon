@@ -1,1 +1,8 @@
-
+DROP TABLE IF EXISTS Jokes;
+CREATE TABLE Jokes (
+  id SERIAL PRIMARY KEY,
+  joke_id VARCHAR(255),
+  type VARCHAR(255),
+  setup VARCHAR(255),
+  punchline VARCHAR(255)
+);
