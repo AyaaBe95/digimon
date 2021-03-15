@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+</head>
+
+<body>
+  <div class="cards">
+    <%data.forEach (val=>{%>
+    <h2><%=val.name%></h2>
+    <img src="<%=val.img%>" alt="">
+    <h5><%=val.level%></h5>
+
+    <form action="/add" method="POST">
+        <input type="hidden" name="name" value="<%= val.name%>">
+        <input type="hidden" name="img" value="<%= val.img%>">
+        <input type="hidden" name="level" value="<%= val.level%>">
+        <input type="submit" value="add-to-my-fav">
+    </form>
+
+    <%})%>
+  </div>
+ 
+</body>
+
+</html>

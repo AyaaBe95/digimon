@@ -1,8 +1,7 @@
-DROP TABLE IF EXISTS Jokes;
-CREATE TABLE Jokes (
+DROP TABLE IF EXISTS digimon;
+CREATE TABLE digimon (
   id SERIAL PRIMARY KEY,
-  joke_id VARCHAR(255),
-  type VARCHAR(255),
-  setup VARCHAR(255),
-  punchline VARCHAR(255)
+  name VARCHAR(255),
+  img VARCHAR(255),
+  level VARCHAR(255)
 );
