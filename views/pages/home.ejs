@@ -14,12 +14,15 @@
     <img src="<%=val.img%>" alt="">
     <h5><%=val.level%></h5>
 
-    <form action="/add" method="POST">
-        <input type="hidden" name="name" value="<%= val.name%>">
-        <input type="hidden" name="img" value="<%= val.img%>">
-        <input type="hidden" name="level" value="<%= val.level%>">
-        <input type="submit" value="add-to-my-fav">
+    <form action="/favourite" method="POST">
+      <input type="hidden" name="name" value="<%= val.name %> ">
+      <input type="hidden" name="img" value="<%= val.img %> ">
+      <input type="hidden" name="level" value="<%= val.level %> ">
+      <input type="submit" value="add to fav">
+
     </form>
+
+  
 
     <%})%>
   </div>
