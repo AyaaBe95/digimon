@@ -1,1 +1,18 @@
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    margin: 30px;
+}
 
+.info div{
+    background-color: rgb(76, 76, 235);
+    text-align: center;
+    padding: 30px;
+    border: solid black 2px;
+}
+
+body{
+    background-color: burlywood;
+}

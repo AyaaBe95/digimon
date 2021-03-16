@@ -2,30 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
+  <%- include('../layout/head') %>
+
 </head>
 
 <body>
-  <div class="cards">
-    <%data.forEach (val=>{%>
-    <h2><%=val.name%></h2>
-    <img src="<%=val.img%>" alt="">
-    <h5><%=val.level%></h5>
+<section class="info">
+  <% data.forEach(element => { %>
+    <div>
+      <p>
+        Name: <%= element.name %> 
+      </p>
+      <img src="<%= element.img %> ">
 
-    <form action="/favourite" method="POST">
-      <input type="hidden" name="name" value="<%= val.name %> ">
-      <input type="hidden" name="img" value="<%= val.img %> ">
-      <input type="hidden" name="level" value="<%= val.level %> ">
-      <input type="submit" value="add to fav">
+      <p>
+        Level: <%= element.level %> 
+      </p>
 
-    </form>
+      <form action="/favourite" method="POST">
+        <input type="hidden" name="name" value="<%= element.name %> ">
+        <input type="hidden" name="img" value="<%= element.img %> ">
+        <input type="hidden" name="level" value="<%= element.level %> ">
+        <input type="submit" value="Add to fav">
+      </form>
+    </div>
+   
+  <% }) %>
 
-  
+</section> 
 
-    <%})%>
-  </div>
+<%- include('../layout/footer') %>
+
  
 </body>
 

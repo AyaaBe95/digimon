@@ -2,24 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
+  <%- include('../layout/head') %>
+
 </head>
 
 <body>
-  <div class="cards">
-    <%data.forEach (val=> { %>
-    <h2><%= val.name %></h2>
-    <img src="<%= val.img %>" alt="">
-    <h3><%= val.level %></h3>
+  <section class="info">
+    <% data.forEach(element => { %>
+      <div>
+        <p> Name: <%= element.name %> </p>
+        <img src="<%= element.img %>">
+        <p> Level: <%= element.level %> </p>
 
-    <form action="/details/<%= val.id%>" method="GET">
-        <input type="submit" value="View-Details">
-    </form>
-    
-  </div>
-  <% }) %>
+        <form action="/details/<%= element.id %> " method="GET">
+          <input type="submit" value="View Details">
+        </form>
+
+      </div>
+     
+    <% }) %>
+
+  </section>
+  <%- include('../layout/footer') %>
+
+
 </body>
 
 </html>
